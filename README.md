@@ -1,4 +1,4 @@
-# Samsung Cart
+# Webpack Boilerplate
 
 ## Usage
 
