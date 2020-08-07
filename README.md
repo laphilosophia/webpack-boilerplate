@@ -76,3 +76,4 @@ cd dist && http-server
 - [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) - Extract CSS into separate files.
 - [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) - Optimize and minimize CSS assets.
 - [`terser-webpack-plugin`](https://github.com/webpack-contrib/terser-webpack-plugin) - Minify JavaScript.
+- [`html-critical-webpack-plugin`](https://github.com/anthonygore/html-critical-webpack-plugin) - Extract critical CSS
