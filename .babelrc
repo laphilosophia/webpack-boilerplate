@@ -1,0 +1,23 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties"],
+    ["module-resolver", {
+      "root": ["./src"],
+      "extensions": [".js", ".ts", ".tsx", ".json"],
+      "alias": {
+        "@images": "./src/images",
+        "@icons": "./src/icons",
+        "@styles": "./src/styles",
+        "@components": "./src/components",
+        "@elements": "./src/elements",
+        "@layouts": "./src/layouts",
+        "@pages": "./src/pages",
+        "@services": "./src/services",
+        "@libs": "./src/libs",
+        "@utils": "./src/utils",
+        "@mocks": "./src/mocks"
+      }
+    }]
+  ]
+}
