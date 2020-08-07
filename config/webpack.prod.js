@@ -5,6 +5,7 @@ const common = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -23,6 +24,19 @@ module.exports = merge(common, {
       filename: 'styles/[name].[contenthash].css',
       chunkFilename: '[name]/[name].[contenthash].css',
     }),
+    new HtmlCriticalWebpackPlugin({
+      base: paths.build,
+      src: 'index.html',
+      dest: `${paths.build}/critical.css`,
+      inline: false,
+      minify: true,
+      extract: true,
+      width: 1300,
+      height: 900,
+      penthouse: {
+        blockJSRequests: false
+      }
+    })
   ],
   module: {
     rules: [
