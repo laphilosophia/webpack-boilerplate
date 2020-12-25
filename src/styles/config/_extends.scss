@@ -1,0 +1,40 @@
+%visually-hidden {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  width: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+%button-reset {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  letter-spacing: .6px;
+  text: {
+    align: center;
+    decoration: none;
+  }
+  white-space: nowrap;
+
+  touch-action: auto;
+  pointer-events: all;
+
+  user-select: none;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: all 200ms ease;
+  will-change: auto;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:focus { outline: 0; }
+}

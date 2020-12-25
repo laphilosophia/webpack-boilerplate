@@ -1,0 +1,331 @@
+@if $enable-grid {
+  .px-auto {
+    padding-right: auto !important;
+    padding-left: auto !important;
+  }
+
+  .py-auto {
+    padding-top: auto !important;
+    padding-bottom: auto !important;
+  }
+
+  .pt-auto {
+    padding-top: auto !important;
+  }
+
+  .pr-auto {
+    padding-right: auto !important;
+  }
+
+  .pb-auto {
+    padding-bottom: auto !important;
+  }
+
+  .pl-auto {
+    padding-left: auto !important;
+  }
+
+  .mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .my-auto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+
+  .mt-auto {
+    margin-top: auto !important;
+  }
+
+  .mr-auto {
+    margin-right: auto !important;
+  }
+
+  .mb-auto {
+    margin-bottom: auto !important;
+  }
+
+  .ml-auto {
+    margin-left: auto !important;
+  }
+
+  @for $i from 0 through $grid-gap-count {
+    .px-#{$i} {
+      padding-right: $i * $grid-gap-value !important;
+      padding-left: $i * $grid-gap-value !important;
+    }
+
+    .py-#{$i} {
+      padding-top: $i * $grid-gap-value !important;
+      padding-bottom: $i * $grid-gap-value !important;
+    }
+
+    .pt-#{$i} {
+      padding-top: $i * $grid-gap-value !important;
+    }
+
+    .pr-#{$i} {
+      padding-right: $i * $grid-gap-value !important;
+    }
+
+    .pb-#{$i} {
+      padding-bottom: $i * $grid-gap-value !important;
+    }
+
+    .pl-#{$i} {
+      padding-left: $i * $grid-gap-value !important;
+    }
+
+    .mx-#{$i} {
+      margin-right: $i * $grid-gap-value !important;
+      margin-left: $i * $grid-gap-value !important;
+    }
+
+    .my-#{$i} {
+      margin-top: $i * $grid-gap-value !important;
+      margin-bottom: $i * $grid-gap-value !important;
+    }
+
+    .mt-#{$i} {
+      margin-top: $i * $grid-gap-value !important;
+    }
+
+    .mr-#{$i} {
+      margin-right: $i * $grid-gap-value !important;
+    }
+
+    .mb-#{$i} {
+      margin-bottom: $i * $grid-gap-value !important;
+    }
+
+    .ml-#{$i} {
+      margin-left: $i * $grid-gap-value !important;
+    }
+  }
+
+  @include media-query(sm) {
+    @for $i from 0 through $grid-gap-count {
+      .sm\:px-#{$i} {
+        padding-right: $i * $grid-gap-value !important;
+        padding-left: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:py-#{$i} {
+        padding-top: $i * $grid-gap-value !important;
+        padding-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:pt-#{$i} {
+        padding-top: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:pr-#{$i} {
+        padding-right: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:pb-#{$i} {
+        padding-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:pl-#{$i} {
+        padding-left: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:mx-#{$i} {
+        margin-right: $i * $grid-gap-value !important;
+        margin-left: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:my-#{$i} {
+        margin-top: $i * $grid-gap-value !important;
+        margin-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:mt-#{$i} {
+        margin-top: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:mr-#{$i} {
+        margin-right: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:mb-#{$i} {
+        margin-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .sm\:ml-#{$i} {
+        margin-left: $i * $grid-gap-value !important;
+      }
+    }
+  }
+
+  @include media-query(md) {
+    @for $i from 0 through $grid-gap-count {
+      .md\:px-#{$i} {
+        padding-right: $i * $grid-gap-value !important;
+        padding-left: $i * $grid-gap-value !important;
+      }
+  
+      .md\:py-#{$i} {
+        padding-top: $i * $grid-gap-value !important;
+        padding-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .md\:pt-#{$i} {
+        padding-top: $i * $grid-gap-value !important;
+      }
+  
+      .md\:pr-#{$i} {
+        padding-right: $i * $grid-gap-value !important;
+      }
+  
+      .md\:pb-#{$i} {
+        padding-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .md\:pl-#{$i} {
+        padding-left: $i * $grid-gap-value !important;
+      }
+  
+      .md\:mx-#{$i} {
+        margin-right: $i * $grid-gap-value !important;
+        margin-left: $i * $grid-gap-value !important;
+      }
+  
+      .md\:my-#{$i} {
+        margin-top: $i * $grid-gap-value !important;
+        margin-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .md\:mt-#{$i} {
+        margin-top: $i * $grid-gap-value !important;
+      }
+  
+      .md\:mr-#{$i} {
+        margin-right: $i * $grid-gap-value !important;
+      }
+  
+      .md\:mb-#{$i} {
+        margin-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .md\:ml-#{$i} {
+        margin-left: $i * $grid-gap-value !important;
+      }
+    }
+  }
+
+  @include media-query(lg) {
+    @for $i from 0 through $grid-gap-count {
+      .lg\:px-#{$i} {
+        padding-right: $i * $grid-gap-value !important;
+        padding-left: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:py-#{$i} {
+        padding-top: $i * $grid-gap-value !important;
+        padding-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:pt-#{$i} {
+        padding-top: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:pr-#{$i} {
+        padding-right: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:pb-#{$i} {
+        padding-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:pl-#{$i} {
+        padding-left: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:mx-#{$i} {
+        margin-right: $i * $grid-gap-value !important;
+        margin-left: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:my-#{$i} {
+        margin-top: $i * $grid-gap-value !important;
+        margin-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:mt-#{$i} {
+        margin-top: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:mr-#{$i} {
+        margin-right: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:mb-#{$i} {
+        margin-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .lg\:ml-#{$i} {
+        margin-left: $i * $grid-gap-value !important;
+      }
+    }
+  }
+
+  @include media-query(xl) {
+    @for $i from 0 through $grid-gap-count {
+      .xl\:px-#{$i} {
+        padding-right: $i * $grid-gap-value !important;
+        padding-left: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:py-#{$i} {
+        padding-top: $i * $grid-gap-value !important;
+        padding-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:pt-#{$i} {
+        padding-top: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:pr-#{$i} {
+        padding-right: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:pb-#{$i} {
+        padding-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:pl-#{$i} {
+        padding-left: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:mx-#{$i} {
+        margin-right: $i * $grid-gap-value !important;
+        margin-left: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:my-#{$i} {
+        margin-top: $i * $grid-gap-value !important;
+        margin-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:mt-#{$i} {
+        margin-top: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:mr-#{$i} {
+        margin-right: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:mb-#{$i} {
+        margin-bottom: $i * $grid-gap-value !important;
+      }
+  
+      .xl\:ml-#{$i} {
+        margin-left: $i * $grid-gap-value !important;
+      }
+    }
+  }
+}

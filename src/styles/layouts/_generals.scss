@@ -1,0 +1,17 @@
+html,
+body {
+  position: relative;
+  font-size: 14px;
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow: visible;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: unset;
+  }
+  @media screen and (max-width: 1024px) {
+    scroll-behavior: unset;
+  }
+}

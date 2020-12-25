@@ -1,0 +1,31 @@
+.order-0 {
+  order: 0 !important;
+}
+
+@for $i from 1 through $order-max {
+  .order-#{$i} { order: $i !important; }
+}
+
+@include media-query(sm) {
+  @for $i from 1 through $order-max {
+    .sm\:order-#{$i} { order: $i !important; }
+  }
+}
+
+@include media-query(md) {
+  @for $i from 1 through $order-max {
+    .md\:order-#{$i} { order: $i !important; }
+  }
+}
+
+@include media-query(lg) {
+  @for $i from 1 through $order-max {
+    .lg\:order-#{$i} { order: $i !important; }
+  }
+}
+
+@include media-query(xl) {
+  @for $i from 1 through $order-max {
+    .xl\:order-#{$i} { order: $i !important; }
+  }
+}

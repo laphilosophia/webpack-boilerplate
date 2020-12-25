@@ -1,0 +1,549 @@
+@if $enable-grid {
+  .grid {
+    display: grid !important;
+    grid-gap: $grid-gap; 
+    gap: $grid-gap;
+  }
+
+  // controls
+  .grid-flow-col {
+    grid-auto-flow: column !important
+  }
+
+  .grid-flow-col-dense {
+    grid-auto-flow: column dense !important
+  }
+
+  .grid-flow-row {
+    grid-auto-flow: row !important
+  }
+
+  .grid-flow-row-dense {
+    grid-auto-flow: row dense !important
+  }
+
+  .grid-auto-row {
+    grid-auto-rows: min-content !important
+  }
+
+  .grid-auto-col {
+    grid-auto-columns: min-content !important
+  }
+
+  // cells
+  @for $i from 1 through $grid-cols {
+    .grid-cols-#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr)) !important;
+    }
+
+    .col-span-#{$i} {
+      grid-column: span $i / span $i !important;
+    }
+
+    .col-start-#{$i} {
+      grid-column-start: $i !important;
+    }
+
+    .col-end-#{$i} {
+      grid-column-end: $i !important;
+    }
+  }
+
+  .col-auto {
+    grid-column: auto !important;
+  }
+
+  .col-start-auto {
+    grid-column-start: auto !important;
+  }
+
+  .col-end-auto {
+    grid-column-end: auto !important;
+  }
+
+  .grid-cols-none {
+    grid-template-columns: none !important;
+  }
+
+  @for $i from 1 through $grid-rows {
+    .grid-rows-#{$i} {
+      grid-template-rows: repeat($i, minmax(0, 1fr)) !important;
+    }
+
+    .row-span-#{$i} {
+      grid-row: span $i / span $i !important;
+    }
+
+    .row-start-#{$i} {
+      grid-row-start: $i !important;
+    }
+
+    .row-end-#{$i} {
+      grid-row-end: $i !important;
+    }
+  }
+
+  .row-auto {
+    grid-row: auto !important;
+  }
+
+  .row-start-auto {
+    grid-row-start: auto !important;
+  }
+
+  .row-end-auto {
+    grid-row-end: auto !important;
+  }
+
+  .grid-rows-none {
+    grid-template-rows: none !important;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .visible-block {
+    display: block !important;
+  }
+
+  .visible-inline {
+    display: inline !important;
+  }
+
+  .visible-flex {
+    display: flex !important;
+  }
+
+  .visible-grid {
+    display: grid !important;
+  }
+
+  // gaps
+  @for $i from 0 through $grid-gap-count {
+    .gap-#{$i} {
+      grid-gap: $i * $grid-gap-value !important;
+      gap: $i * $grid-gap-value !important;
+    }
+  }
+
+  @for $i from 0 through $grid-gap-count {
+    .gap-x-#{$i} {
+      grid-column-gap: $i * $grid-gap-value !important;
+      column-gap: $i * $grid-gap-value !important;
+    }
+  }
+
+  @for $i from 0 through $grid-gap-count {
+    .gap-y-#{$i} {
+      grid-row-gap: $i * $grid-gap-value !important;
+      row-gap: $i * $grid-gap-value !important;
+    }
+  }
+
+  // medias
+  @include media-query(xs) {
+    @for $i from 0 through $grid-gap-count {
+      .xs\:gap-#{$i} {
+        grid-gap: $i * $grid-gap-value !important;
+        gap: $i * $grid-gap-value !important;
+      }
+    }
+
+    @for $i from 1 through $grid-rows {
+      .xs\:grid-rows-#{$i} {
+        grid-template-rows: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .xs\:row-span-#{$i} {
+        grid-row: span $i / span $i !important;
+      }
+  
+      .xs\:row-start-#{$i} {
+        grid-row-start: $i !important;
+      }
+  
+      .xs\:row-end-#{$i} {
+        grid-row-end: $i !important;
+      }
+    }
+
+    @for $i from 1 through $grid-cols {
+      .xs\:grid-cols-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .xs\:col-span-#{$i} {
+        grid-column: span $i / span $i !important;
+      }
+  
+      .xs\:col-start-#{$i} {
+        grid-column-start: $i !important;
+      }
+  
+      .xs\:col-end-#{$i} {
+        grid-column-end: $i !important;
+      }
+    }
+
+    .xs\:grid-flow-col {
+      grid-auto-flow: column !important
+    }
+  
+    .xs\:grid-flow-col-dense {
+      grid-auto-flow: column dense !important
+    }
+  
+    .xs\:grid-flow-row {
+      grid-auto-flow: row !important
+    }
+  
+    .xs\:grid-flow-row-dense {
+      grid-auto-flow: row dense !important
+    }
+
+    .xs\:hidden {
+      display: none !important;
+    }
+
+    .xs\:visible-block {
+      display: block !important;
+    }
+
+    .xs\:visible-inline {
+      display: inline !important;
+    }
+
+    .xs\:visible-flex {
+      display: flex !important;
+    }
+
+    .xs\:visible-grid {
+      display: grid !important;
+    }
+  }
+
+  @include media-query(sm) {
+    @for $i from 0 through $grid-gap-count {
+      .sm\:gap-#{$i} {
+        grid-gap: $i * $grid-gap-value !important;
+        gap: $i * $grid-gap-value !important;
+      }
+    }
+
+    @for $i from 1 through $grid-rows {
+      .sm\:grid-rows-#{$i} {
+        grid-template-rows: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .sm\:row-span-#{$i} {
+        grid-row: span $i / span $i !important;
+      }
+  
+      .sm\:row-start-#{$i} {
+        grid-row-start: $i !important;
+      }
+  
+      .sm\:row-end-#{$i} {
+        grid-row-end: $i !important;
+      }
+    }
+
+    @for $i from 1 through $grid-cols {
+      .sm\:grid-cols-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .sm\:col-span-#{$i} {
+        grid-column: span $i / span $i !important;
+      }
+  
+      .sm\:col-start-#{$i} {
+        grid-column-start: $i !important;
+      }
+  
+      .sm\:col-end-#{$i} {
+        grid-column-end: $i !important;
+      }
+    }
+
+    .sm\:grid-flow-col {
+      grid-auto-flow: column !important
+    }
+  
+    .sm\:grid-flow-col-dense {
+      grid-auto-flow: column dense !important
+    }
+  
+    .sm\:grid-flow-row {
+      grid-auto-flow: row !important
+    }
+  
+    .sm\:grid-flow-row-dense {
+      grid-auto-flow: row dense !important
+    }
+
+    .sm\:hidden {
+      display: none !important;
+    }
+
+    .sm\:visible-block {
+      display: block !important;
+    }
+
+    .sm\:visible-inline {
+      display: inline !important;
+    }
+
+    .sm\:visible-flex {
+      display: flex !important;
+    }
+
+    .sm\:visible-grid {
+      display: grid !important;
+    }
+  }
+
+  @include media-query(md) {
+    @for $i from 0 through $grid-gap-count {
+      .md\:gap-#{$i} {
+        grid-gap: $i * $grid-gap-value !important;
+        gap: $i * $grid-gap-value !important;
+      }
+    }
+
+    @for $i from 1 through $grid-rows {
+      .md\:grid-rows-#{$i} {
+        grid-template-rows: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .md\:row-span-#{$i} {
+        grid-row: span $i / span $i !important;
+      }
+  
+      .md\:row-start-#{$i} {
+        grid-row-start: $i !important;
+      }
+  
+      .md\:row-end-#{$i} {
+        grid-row-end: $i !important;
+      }
+    }
+
+    @for $i from 1 through $grid-cols {
+      .md\:grid-cols-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .md\:col-span-#{$i} {
+        grid-column: span $i / span $i !important;
+      }
+  
+      .md\:col-start-#{$i} {
+        grid-column-start: $i !important;
+      }
+  
+      .md\:col-end-#{$i} {
+        grid-column-end: $i !important;
+      }
+    }
+
+    .md\:grid-flow-col {
+      grid-auto-flow: column !important
+    }
+  
+    .md\:grid-flow-col-dense {
+      grid-auto-flow: column dense !important
+    }
+  
+    .md\:grid-flow-row {
+      grid-auto-flow: row !important
+    }
+  
+    .md\:grid-flow-row-dense {
+      grid-auto-flow: row dense !important
+    }
+
+    .md\:hidden {
+      display: none !important;
+    }
+
+    .md\:visible-block {
+      display: block !important;
+    }
+
+    .md\:visible-inline {
+      display: inline !important;
+    }
+
+    .md\:visible-flex {
+      display: flex !important;
+    }
+
+    .md\:visible-grid {
+      display: grid !important;
+    }
+  }
+
+  @include media-query(lg) {
+    @for $i from 0 through $grid-gap-count {
+      .lg\:gap-#{$i} {
+        grid-gap: $i * $grid-gap-value !important;
+        gap: $i * $grid-gap-value !important;
+      }
+    }
+
+    @for $i from 1 through $grid-rows {
+      .lg\:grid-rows-#{$i} {
+        grid-template-rows: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .lg\:row-span-#{$i} {
+        grid-row: span $i / span $i !important;
+      }
+  
+      .lg\:row-start-#{$i} {
+        grid-row-start: $i !important;
+      }
+  
+      .lg\:row-end-#{$i} {
+        grid-row-end: $i !important;
+      }
+    }
+
+    @for $i from 1 through $grid-cols {
+      .lg\:grid-cols-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .lg\:col-span-#{$i} {
+        grid-column: span $i / span $i !important;
+      }
+  
+      .lg\:col-start-#{$i} {
+        grid-column-start: $i !important;
+      }
+  
+      .lg\:col-end-#{$i} {
+        grid-column-end: $i !important;
+      }
+    }
+
+    .lg\:grid-flow-col {
+      grid-auto-flow: column !important
+    }
+  
+    .lg\:grid-flow-col-dense {
+      grid-auto-flow: column dense !important
+    }
+  
+    .lg\:grid-flow-row {
+      grid-auto-flow: row !important
+    }
+  
+    .lg\:grid-flow-row-dense {
+      grid-auto-flow: row dense !important
+    }
+
+    .lg\:hidden {
+      display: none !important;
+    }
+
+    .lg\:visible-block {
+      display: block !important;
+    }
+
+    .lg\:visible-inline {
+      display: inline !important;
+    }
+
+    .lg\:visible-flex {
+      display: flex !important;
+    }
+
+    .lg\:visible-grid {
+      display: grid !important;
+    }
+  }
+
+  @include media-query(xl) {
+    @for $i from 0 through $grid-gap-count {
+      .xl\:gap-#{$i} {
+        grid-gap: $i * $grid-gap-value !important;
+        gap: $i * $grid-gap-value !important;
+      }
+    }
+
+    @for $i from 1 through $grid-rows {
+      .xl\:grid-rows-#{$i} {
+        grid-template-rows: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .xl\:row-span-#{$i} {
+        grid-row: span $i / span $i !important;
+      }
+  
+      .xl\:row-start-#{$i} {
+        grid-row-start: $i !important;
+      }
+  
+      .xl\:row-end-#{$i} {
+        grid-row-end: $i !important;
+      }
+    }
+
+    @for $i from 1 through $grid-cols {
+      .xl\:grid-cols-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, 1fr)) !important;
+      }
+
+      .xl\:col-span-#{$i} {
+        grid-column: span $i / span $i !important;
+      }
+  
+      .xl\:col-start-#{$i} {
+        grid-column-start: $i !important;
+      }
+  
+      .xl\:col-end-#{$i} {
+        grid-column-end: $i !important;
+      }
+    }
+
+    .xl\:grid-flow-col {
+      grid-auto-flow: column !important
+    }
+  
+    .xl\:grid-flow-col-dense {
+      grid-auto-flow: column dense !important
+    }
+  
+    .xl\:grid-flow-row {
+      grid-auto-flow: row !important
+    }
+  
+    .xl\:grid-flow-row-dense {
+      grid-auto-flow: row dense !important
+    }
+
+    .xl\:hidden {
+      display: none !important;
+    }
+
+    .xl\:visible-block {
+      display: block !important;
+    }
+
+    .xl\:visible-inline {
+      display: inline !important;
+    }
+
+    .xl\:visible-flex {
+      display: flex !important;
+    }
+
+    .xl\:visible-grid {
+      display: grid !important;
+    }
+  }
+}

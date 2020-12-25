@@ -1,0 +1,24 @@
+$breakpoints: (
+  xs: (min-width: 425px),
+  sm: (min-width: 768px),
+  md: (min-width: 1024px),
+  lg: (min-width: 1280px),
+  xl: (min-width: 1440px),
+) !default;
+
+/// @author Erdem Arslan
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+/// @return @media screen and (min-width: $value) { @content; }
+@mixin media-query($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

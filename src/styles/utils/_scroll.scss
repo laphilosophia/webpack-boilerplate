@@ -1,0 +1,20 @@
+.zm-scroll {
+  position: fixed !important;
+  z-index: index(nine);
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform-origin: top center;
+  transform-style: flat;
+
+  @include transition(transform, 400ms, ease-in-out);
+
+  &.zm-scroll-down {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  &.zm-scroll-up {
+    transform: none;
+  }
+}

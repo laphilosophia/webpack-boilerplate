@@ -1,0 +1,138 @@
+// typography
+$fontfamily: () !default;
+
+@function family($key: oddone) {
+  @return map-get($fontfamily, $key);
+}
+
+// usage:  font(oddone);
+
+$fontsizes: (
+  f12: decimal-round(rem-calc(12px), 1),
+) !default;
+
+@function size($key: f16) {
+  @return map-get($fontsizes, $key);
+}
+
+// usage:  size(f16);
+
+
+$fontweight: (
+  line: 100,
+  thin: 200,
+  light: 300,
+  regular: 400,
+  semi: 500,
+  medium: 600,
+  bold: 700,
+  bolder: 800,
+  black: 900,
+) !default;
+
+@function weight($key: regular) {
+  @return map-get($fontweight, $key);
+}
+
+// usage:  weight(regular);
+
+
+$lineheights: (
+  xl: 2.1,
+  lg: 1.9,
+  md: 1.6,
+  sm: 1.3,
+  xs: 1
+) !default;
+
+@function line($key: xs) {
+  @return map-get($lineheights, $key);
+}
+
+// usage:  line('xs');
+
+// z-index
+$zindexes: (
+  negative: -1,
+  default: 0,
+  one: 1000,
+  two: 2000,
+  three: 3000,
+  four: 4000,
+  five: 5000,
+  six: 6000,
+  seven: 7000,
+  eight: 8000,
+  nine: 9000,
+  full: 9999
+) !default;
+
+@function index($key: default) {
+  @return map-get($zindexes, $key);
+}
+
+// usage:  z-index: index('default');
+
+
+// colors
+$colors: (
+  primary: #000000,
+  secondary: #FFFD38,
+  comment: #4f95da,
+  accent: #007AFF,
+  warning: #F2AC57,
+  success: #6ADA37,
+  success-dark: #62AA00,
+  error: #FC0D1B,
+  focus: #007AFF,
+  disabled: #E5E5E5,
+  inactive: #C4C4C4,
+  passive: #F8F8F8,
+  black-75: rgba(0, 0, 0, 0.75),
+  black-50: rgba(0, 0, 0, 0.5),
+  black-25: rgba(0, 0, 0, 0.25),
+  black-10: rgba(0, 0, 0, 0.1),
+);
+
+// retrieve color from map ie. `color(primary)`
+// usage: color(text, primary);
+@function color($color-name, $color-variant: null) {
+  @if ($color-variant !=null) {
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  }
+
+  @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
+
+// settings
+$settings: (
+  max-width: 1914px,
+  transition-timing: 175ms
+) !default;
+
+@function settings($setting-name) {
+  @return map-get($settings, $setting-name);
+}
+
+
+// options
+$enable-flex: true !default;
+$enable-grid: true !default;
+$enable-rounded: false !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: false !default;
+
+// usage: @if not $enable-grid { ... } @else { ... }
+
+$container-maxwidth: 1280px;
+$grid-cols: 24;
+$grid-rows: 24;
+$grid-gap: 20px;
+$grid-gap-count: 100;
+$grid-gap-value: 1px;
+$order-max: 24;
+$order-min: -24;

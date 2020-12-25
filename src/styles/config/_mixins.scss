@@ -1,0 +1,194 @@
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value;
+}
+
+@mixin background-gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+
+  @if $orientation=='vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  }
+
+  @else if $orientation=='horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  }
+
+  @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+@mixin background-image($url: "", $position: "", $repeat: "", $size: "", $origin: "", $attachment: "", $clip: "") {
+  @if $url !="" {
+    background: {
+      image: url($url);
+      position: $position;
+      repeat: $repeat;
+    }
+  }
+
+  @else {
+    @error 'Invalid or Not Found #{$url}';
+  }
+
+  @if $size !="" {
+    background-size: $size
+  }
+
+  @if $origin !="" {
+    background-origin: $origin;
+  }
+
+  @if $attachment !="" {
+    background-attachment: $attachment;
+  }
+
+  @if $clip !="" {
+    background-clip: $clip;
+  }
+}
+
+@mixin random-backgrounds($c, $y) {
+  background-color: $c;
+
+  @for $i from 1 through $y {
+    $k: 3%;
+    $j: $i - 1;
+
+    @if $i==1 {
+      &:nth-child(#{$i}) {
+        background-color: $c;
+      }
+    }
+
+    @else {
+      &:nth-child(#{$i}) {
+        background-color: darken($c, ($k * $j));
+      }
+    }
+  }
+}
+
+@mixin border-radius($radius) {
+  @include prefix(border-radius, $radius, 'webkit''moz');
+}
+
+@mixin box-sizing($type) {
+  @include prefix(box-sizing, $type, 'moz');
+}
+
+@mixin box-shadow($args) {
+  @include prefix(box-shadow, $args, 'moz');
+}
+
+@mixin center-both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include prefix(transform, translate(-50%, -50%), 'webkit''ms');
+}
+
+@mixin center-abs {
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin transform($transformation) {
+  @include prefix(transform, $transformation, 'webkit''ms');
+}
+
+@mixin transition($type: all, $time: 1s, $timing-function: ease-in-out) {
+  @include prefix(transition, $type $time $timing-function, 'webkit');
+}
+
+@mixin placeholder($color: black) {
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin maxsize($width, $height: $width) {
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin textstroke($color, $alpha) {
+  text-shadow:
+    -1px -1px 0 rgba($color, $alpha),
+    1px -1px 0 rgba($color, $alpha),
+    -1px 1px 0 rgba($color, $alpha),
+    1px 1px 0 rgba($color, $alpha);
+}
+
+/* *** */
+
+// https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html
+//
+// grayscale      ex: filter: grayscale(100%);
+// sepia          ex: filter: sepia(100%);
+// saturate       ex: filter: saturate(0%);
+// hue-rotate     ex: filter: hue-rotate(45deg);
+// invert         ex: filter: invert(100%);
+// brightness     ex: filter: brightness(15%);
+// contrast       ex: filter: contrast(200%);
+// blur           ex: filter: blur(2px);
+
+@mixin filter($filter-type, $filter-amount) {
+  @include prefix(filter, unquote($filter-type+unquote('(#{$filter-amount})')), 'webkit, moz, ms, o');
+}
+
+// usage: @include filter(grayscale, 100%);
+
+
+@mixin cdnimage($image, $pos: center, $rep: no-repeat, $size: 100% auto) {
+  background: {
+    image: url('https://res.cloudinary.com/erdemarslan/image/upload/' + $image);
+    position: $pos;
+    repeat: $rep;
+    size: $size;
+  }
+}

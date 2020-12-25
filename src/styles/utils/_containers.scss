@@ -1,0 +1,148 @@
+.container,
+.container-fixed,
+.container-fluid,
+.container-narrow {
+  position: relative;
+  width: 100% !important;
+  margin: {
+    left: auto !important;
+    right: auto !important;
+  }
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: calc(100% - #{$grid-gap * 2}) !important;
+}
+
+.container-fixed {
+  @media screen and (max-width: 1440px) {
+    max-width: calc(100% - #{$grid-gap * 2}) !important;
+  }
+
+  @media screen and (min-width: 1441px) {
+    max-width: $container-maxwidth !important;
+  }
+}
+
+.container-narrow {
+  max-width: 100% !important;
+
+  @include media-query(md) {
+    max-width: calc(100% - #{$grid-gap * 2}) !important;
+  }
+}
+
+.container-fluid {
+  max-width: 100% !important;
+}
+
+@include media-query(xs) {
+  .xs\:container {
+    max-width: 425px !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+
+  .xs\:container-full {
+    max-width: 100% !important;
+  }
+
+  .xs\:container-fluid {
+    max-width: calc(100% - #{$grid-gap * 2}) !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+}
+
+@include media-query(sm) {
+  .sm\:container {
+    max-width: 768px !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+
+  .sm\:container-full {
+    max-width: 100% !important;
+  }
+
+  .sm\:container-fluid {
+    max-width: calc(100% - #{$grid-gap * 2}) !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+}
+
+@include media-query(md) {
+  .md\:container {
+    max-width: 1024px !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+
+  .md\:container-full {
+    max-width: 100% !important;
+  }
+
+  .md\:container-fluid {
+    max-width: calc(100% - #{$grid-gap * 2}) !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+}
+
+@include media-query(lg) {
+  .lg\:container {
+    max-width: 1280px !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+
+  .lg\:container-full {
+    max-width: 100% !important;
+  }
+
+  .lg\:container-fluid {
+    max-width: calc(100% - #{$grid-gap * 2}) !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+}
+
+@include media-query(xl) {
+  .xl\:container {
+    max-width: calc(100% - #{$grid-gap * 2}) !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+
+  .xl\:container-full {
+    max-width: 100% !important;
+  }
+
+  .xl\:container-fluid {
+    max-width: calc(100% - #{$grid-gap * 2}) !important;
+    margin: {
+      left: auto !important;
+      right: auto !important;
+    }
+  }
+}

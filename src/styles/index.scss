@@ -1,0 +1,17 @@
+/* variables, mixins, functions and any configs */
+@import 'config/index';
+
+/* utilities settings */
+@import 'utils/index';
+
+/* layout settings */
+@import 'layouts/index';
+
+/* elements - button, input, label, etc.. */
+@import 'elements/index';
+
+/* modules - header, footer, card, filter, etc.. */
+@import 'modules/index';
+
+/* components */
+@import 'components/index';
